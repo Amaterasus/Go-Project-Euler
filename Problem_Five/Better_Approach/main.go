@@ -17,10 +17,10 @@ func main() {
 }
 
 
-func lcm(lowestNumber, highestNumber int) int {
+func lcm(lowestNumber, highestNumber int64) int64 {
 	numbers := makeRange(lowestNumber, highestNumber)
 
-	output := 1
+	var output int64 = 1
 
 	for _, v := range numbers {
 		output = checkTimesTables(output, v)
@@ -30,8 +30,8 @@ func lcm(lowestNumber, highestNumber int) int {
 }
 
 
-func checkTimesTables(number, divider int) int {
-	i := 1
+func checkTimesTables(number, divider int64) int64 {
+	var i int64 = 1
 
 	flip := checkMultiple(number, divider, i)
 
@@ -43,16 +43,16 @@ func checkTimesTables(number, divider int) int {
 	return number * i
 }
 
-func checkMultiple(number, divider, i int) bool {
+func checkMultiple(number, divider, i int64) bool {
 	return number * i % divider == 0 
 }
 
 
 
-func makeRange(min, max int) []int {
-	a := make([]int, max-min+1)
+func makeRange(min, max int64) []int64 {
+	a := make([]int64, max-min+1)
 	for i := range a {
-		a[i] = min + i
+		a[i] = min + int64(i)
 	}
 	return a
 }
