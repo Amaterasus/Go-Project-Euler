@@ -17,11 +17,10 @@ func main() {
 
 func lcm(lowestNumber, highestNumber int) int {
 	numbers := makeRange(lowestNumber, highestNumber)
-	flip := true
+	
 	i := highestNumber
-	for flip {
+	for true {
 		if bruteForce(i, numbers) {
-			flip = false
 			break
 		}
 		i += highestNumber
